@@ -4,7 +4,7 @@ Ruby on Rails application that archives and provides an alternative interface fo
 
 Version: Ruby 2.3.1, Rails 5.1.1
 
-## Deploy
+## Deployment
 
 1. bundler install
 2. rails db:migrate
