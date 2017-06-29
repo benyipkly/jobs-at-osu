@@ -1,0 +1,26 @@
+<%= form_tag('/feedreader/index', method: 'get') do %>
+  <%= label_tag "Job Title: "%>
+  <%= text_field_tag :search, params[:search] %>
+  <%= select_tag 'department',  content_tag(:option,'',:value=>"") + options_from_collection_for_select(Job.select(:author).order(:author).distinct, :author, :author) %>
+  <%= submit_tag "Search" %>
+<% end %>
+<h2>All jobs</h2>
+
+<table id="jobs" class="display">
+  <thead>
+  <tr>
+    <td>Title</td>
+    <td>Department</td>
+    <td>Description</td>
+  </tr>
+  </thead>
+  <tbody>
+  <% @jobs.each do |data| %>
+      <tr>
+        <td><a href="<%= data.link %>"><%= data.title %></a></td>
+        <td><%= data.author %></td>
+        <td><%= data.content.html_safe %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

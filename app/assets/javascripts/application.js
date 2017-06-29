@@ -12,4 +12,6 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require jquery
+//= require dataTables/jquery.dataTables
 //= require_tree .
