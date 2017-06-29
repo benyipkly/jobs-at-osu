@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails application that archives and provides an alternative interface for https://www.jobsatosu.com
 
-Things you may want to cover:
+Version: Ruby 2.3.1, Rails 5.1.1
 
-* Ruby version
+##Deploy
 
-* System dependencies
+1. bundler install
+2. rails db:migrate
+3. rail s
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This application is not afflicated with https://www.jobsatosu.com
