@@ -8,9 +8,10 @@ Version: Ruby 2.3.1, Rails 5.1.1
 Run following commands in order:
   1. ``` bundler install ```
   2. ``` rails db:migrate ```
+  3. ``` rails db:getFeed ```
   3. ``` rail s ```
 
-Get RSS Feed by running ```rails db:getFeed ``` with a scheduler (e.g. crontab)
+Get RSS Feed periodically by running ```rails db:getFeed ``` with a scheduler (e.g. crontab)
 
 
 
