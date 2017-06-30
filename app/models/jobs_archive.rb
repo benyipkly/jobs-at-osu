@@ -1,0 +1,2 @@
+class JobsArchive < ApplicationRecord
+end

@@ -1,0 +1,29 @@
+<%= form_tag('/archive', method: 'get') do %>
+    <%= label_tag "Job Title: "%>
+    <%= text_field_tag :search, params[:search] %>
+    <%= label_tag "Department: "%>
+    <%= select_tag 'department',  content_tag(:option,'',:value=>"") + options_from_collection_for_select(Job.select(:author).order(:author).distinct, :author, :author) %>
+    <%= submit_tag "Search" %>
+<% end %>
+<h1>Archive</h1>
+
+<table id="jobs" class="display">
+  <thead>
+  <tr>
+    <td>Id</td>
+    <td>Title</td>
+    <td>Department</td>
+    <td>Date Published</td>
+  </tr>
+  </thead>
+  <tbody>
+  <% @jobs.each do |data| %>
+      <tr>
+        <td><%= data.job_id %></td>
+        <td><a href="<%= data.link %>"><%= data.title %></a></td>
+        <td><%= data.author %></td>
+        <td><%= data.published.to_date %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

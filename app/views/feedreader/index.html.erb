@@ -1,10 +1,15 @@
 <%= form_tag('/feedreader/index', method: 'get') do %>
   <%= label_tag "Job Title: "%>
   <%= text_field_tag :search, params[:search] %>
+  <%= label_tag "Department: "%>
   <%= select_tag 'department',  content_tag(:option,'',:value=>"") + options_from_collection_for_select(Job.select(:author).order(:author).distinct, :author, :author) %>
   <%= submit_tag "Search" %>
 <% end %>
-<h2>All jobs</h2>
+<h2>
+  <%= params[:search].blank? ? "All" : params[:search] %>
+  Jobs
+  <%= params[:department].blank? ? "" : "in " + params[:department] %>
+</h2>
 
 <table id="jobs" class="display">
   <thead>
