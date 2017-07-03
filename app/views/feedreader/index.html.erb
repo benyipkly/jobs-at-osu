@@ -14,6 +14,7 @@
 <table id="jobs" class="display">
   <thead>
   <tr>
+    <td>Id</td>
     <td>Title</td>
     <td>Department</td>
     <td>Description</td>
@@ -22,6 +23,7 @@
   <tbody>
   <% @jobs.each do |data| %>
       <tr>
+        <td><%= data.job_id %></td>
         <td><a href="<%= data.link %>"><%= data.title %></a></td>
         <td><%= data.author %></td>
         <td><%= data.content.html_safe %></td>
